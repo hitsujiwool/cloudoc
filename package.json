@@ -1,0 +1,18 @@
+{
+  "name": "cloudoc",
+  "version": "0.0.1",
+  "description": "markdown image link converter making use of cloud storage",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:hitsujiwool/cloudoc.git"
+  },
+  "author": "Ryo Murayama <utatanenohibi@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cloudup-client": "~0.3.1",
+    "async-replace": "git://github.com/kesla/async-replace.git#v0.0.2",
+    "commander": "~2.1.0"
+  },
+  "bin": { "cloudoc": "./bin/cloudoc" }
+}

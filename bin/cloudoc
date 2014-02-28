@@ -1,0 +1,27 @@
+#!/usr/bin/env node
+
+var program = require('commander');
+var cloudoc = require('../');
+var path = require('path');
+
+program
+	.usage('[options] <file>')
+	.version('0.0.1')
+	.option('-t, --title <title>', 'title of stream', String)
+	.option('-u, --user <username>', 'username', String)
+	.option('-p, --password <password>', 'password', String)
+	.parse(process.argv);
+
+if (program.args.length === 0) program.help();
+
+cloudoc(path.resolve(process.cwd(), program.args.shift()), {
+  title: program.title,
+  username: program.user,
+  password: program.password
+}, function(err, doc) {
+  if (err) {
+	console.error(err);
+    process.exit();
+  }
+  console.log(doc);
+});
